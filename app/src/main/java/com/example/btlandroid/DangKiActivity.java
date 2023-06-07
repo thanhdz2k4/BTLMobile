@@ -35,27 +35,8 @@ public class DangKiActivity extends AppCompatActivity {
         this.btn_dangKiTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!checkMatKhau()) {
-                    Toast.makeText(getApplicationContext(), "Mật khẩu không hợp lệ", Toast.LENGTH_SHORT).show();
-                    edt_matKhauDangKi_lai.setText("");
-                }
-                if(edt_taiKhoanDangKi_text.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Tài khoản không hợp lệ", Toast.LENGTH_SHORT).show();
-                    this.restartActivity();
-                }
-                if(edt_sdt_text.length() < 12) {
-                    Toast.makeText(getApplicationContext(), "sdt không hợp lệ", Toast.LENGTH_SHORT).show();
-                    edt_sdt_text.setText("");
-                }
-
-
+                checkCorrectForm();
             }
-
-            private void restartActivity() {
-                Intent intent = new Intent(DangKiActivity.this, DangKiActivity.class);
-                startActivity(intent);
-            }
-
         });
     }
 
@@ -71,5 +52,25 @@ public class DangKiActivity extends AppCompatActivity {
 
     public boolean checkMatKhau() {
         return this.edt_matKhauDangKi_lai.getText().toString().equals(this.edt_matKhauDangKi_text.getText().toString());
+    }
+
+    public void checkCorrectForm() {
+        if(!checkMatKhau()) {
+            Toast.makeText(getApplicationContext(), "Mật khẩu không hợp lệ", Toast.LENGTH_SHORT).show();
+            edt_matKhauDangKi_lai.setText("");
+        }
+        if(edt_taiKhoanDangKi_text.getText().toString().trim().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Tài khoản không hợp lệ", Toast.LENGTH_SHORT).show();
+            this.restartActivity();
+        }
+        if(edt_sdt_text.length() < 12) {
+            Toast.makeText(getApplicationContext(), "sdt không hợp lệ", Toast.LENGTH_SHORT).show();
+            edt_sdt_text.setText("");
+        }
+    }
+
+    private void restartActivity() {
+        Intent intent = new Intent(DangKiActivity.this, DangKiActivity.class);
+        startActivity(intent);
     }
 }
