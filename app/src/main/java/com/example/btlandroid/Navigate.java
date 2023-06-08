@@ -1,24 +1,21 @@
 package com.example.btlandroid;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MenuActivity extends AppCompatActivity {
+public class Navigate extends AppCompatActivity {
     Button btn_datOnline, btn_datTaiQuan;
     ImageButton imgbtn_cart, imgbtn_oder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_naviagate);
         loadView();
 
         if(getSupportActionBar() != null){
@@ -32,14 +29,14 @@ public class MenuActivity extends AppCompatActivity {
         imgbtn_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuActivity.this, "Comming son", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Navigate.this, "Comming son", Toast.LENGTH_SHORT).show();
             }
         });
         
         imgbtn_oder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuActivity.this, "Comming son", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Navigate.this, "Comming son", Toast.LENGTH_SHORT).show();
             }
         });
 

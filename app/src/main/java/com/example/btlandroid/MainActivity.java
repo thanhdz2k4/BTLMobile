@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 String password = edt_matKhau_text.getText().toString();
 
                 if(username.equals("admin") && password.equals("admin")){
-                        Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                        Intent intent = new Intent(MainActivity.this, Navigate.class);
                         startActivity(intent);
                 }else{
                     Toast.makeText(MainActivity.this, "Tài khoản hoặc mật khẩu không chính xác", Toast.LENGTH_SHORT).show();
