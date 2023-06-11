@@ -96,16 +96,6 @@
         android:layout_marginStart="35dp"
         android:layout_marginBottom="20dp"/>
 
-<!--    <Button-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/btn_dangNhapNgay"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginStart="20dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:text="Đăng nhập"-->
-<!--        android:layout_toRightOf="@id/tv_cauhoi"/>-->\
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/mtb_dangNhapNgay"
         android:layout_width="wrap_content"

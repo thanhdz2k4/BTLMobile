@@ -63,7 +63,7 @@ public class DangKiActivity extends AppCompatActivity {
         }
         else if(edt_taiKhoanDangKi_text.getText().toString().trim().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Tài khoản không hợp lệ", Toast.LENGTH_SHORT).show();
-            this.restartActivity();
+            edt_taiKhoanDangKi_text.setText("");
         }
         else if(edt_sdt_text.length() < 11) {
             Toast.makeText(getApplicationContext(), "Sdt không hợp lệ", Toast.LENGTH_SHORT).show();
