@@ -9,10 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+
 public class DangKiActivity extends AppCompatActivity {
 
     EditText edt_taiKhoanDangKi_text, edt_matKhauDangKi_text, edt_sdt_text, edt_matKhauDangKi_lai;
-    Button btn_dangKiTaiKhoan, btn_dangNhapNgay;
+
+    MaterialButton mtb_dangKiTaiKhoan, mtb_dangNhapNgay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +27,14 @@ public class DangKiActivity extends AppCompatActivity {
         }
         this.loadView();
 
-        btn_dangNhapNgay.setOnClickListener(new View.OnClickListener() {
+        mtb_dangNhapNgay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DangKiActivity.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 
-        this.btn_dangKiTaiKhoan.setOnClickListener(new View.OnClickListener() {
+        this.mtb_dangKiTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 checkCorrectForm();
@@ -46,8 +48,8 @@ public class DangKiActivity extends AppCompatActivity {
         this.edt_sdt_text = findViewById(R.id.edt_sdt_text);
         this.edt_matKhauDangKi_lai = findViewById(R.id.edt_matKhauDangKiLai_text);
 
-        this.btn_dangKiTaiKhoan = findViewById(R.id.btn_dangkiTaiKhoan);
-        this.btn_dangNhapNgay = findViewById(R.id.btn_dangNhapNgay);
+        this.mtb_dangKiTaiKhoan = findViewById(R.id.mtb_dangKiTaiKhoan);
+        this.mtb_dangNhapNgay = findViewById(R.id.mtb_dangNhapNgay);
     }
 
     public boolean checkMatKhau() {
@@ -59,14 +61,17 @@ public class DangKiActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Mật khẩu không hợp lệ", Toast.LENGTH_SHORT).show();
             edt_matKhauDangKi_lai.setText("");
         }
-        if(edt_taiKhoanDangKi_text.getText().toString().trim().isEmpty()) {
+        else if(edt_taiKhoanDangKi_text.getText().toString().trim().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Tài khoản không hợp lệ", Toast.LENGTH_SHORT).show();
             this.restartActivity();
         }
-        if(edt_sdt_text.length() < 11) {
-            Toast.makeText(getApplicationContext(), "sdt không hợp lệ", Toast.LENGTH_SHORT).show();
+        else if(edt_sdt_text.length() < 11) {
+            Toast.makeText(getApplicationContext(), "Sdt không hợp lệ", Toast.LENGTH_SHORT).show();
             edt_sdt_text.setText("");
+        }else{
+            finish();
         }
+
     }
 
     private void restartActivity() {

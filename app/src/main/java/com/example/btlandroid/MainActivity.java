@@ -9,10 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText edt_taiKhoan_text, edt_matKhau_text;
-    Button btn_dangKi, btn_dangNhap;
+
+    MaterialButton mtb_dangNhap, mtb_dangKi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayUseLogoEnabled(true);
         }
         this.loadView();
-        btn_dangKi.setOnClickListener(new View.OnClickListener() {
+        mtb_dangKi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DangKiActivity.class);
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_dangNhap.setOnClickListener(new View.OnClickListener() {
+        mtb_dangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String username = edt_taiKhoan_text.getText().toString();
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         this.edt_taiKhoan_text = findViewById(R.id.edt_taiKhoan_text);
         this.edt_matKhau_text = findViewById(R.id.edt_matKhau_text);
 
-        this.btn_dangNhap = findViewById(R.id.btn_dangNhap);
-        this.btn_dangKi = findViewById(R.id.btn_dangKi);
+        this.mtb_dangNhap = findViewById(R.id.mtb_dangNhap);
+        this.mtb_dangKi = findViewById(R.id.mtb_dangKi);
     }
 }

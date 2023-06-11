@@ -76,15 +76,15 @@
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/btn_dangkiTaiKhoan"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mtb_dangKiTaiKhoan"
+        android:text="Đăng kí"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_sdt"
         android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@id/edt_sdt"
         android:layout_marginTop="20dp"
-        android:text="Đăng kí" />
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -96,14 +96,28 @@
         android:layout_marginStart="35dp"
         android:layout_marginBottom="20dp"/>
 
-    <Button
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/btn_dangNhapNgay"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:text="Đăng nhập"-->
+<!--        android:layout_toRightOf="@id/tv_cauhoi"/>-->\
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mtb_dangNhapNgay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_dangNhapNgay"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="10dp"
         android:text="Đăng nhập"
-        android:layout_toRightOf="@id/tv_cauhoi"/>
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="10dp"/>
+
+
+
 
 </RelativeLayout>
